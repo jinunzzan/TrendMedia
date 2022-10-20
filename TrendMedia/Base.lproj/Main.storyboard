@@ -121,6 +121,37 @@
             </objects>
             <point key="canvasLocation" x="1932" y="-284"/>
         </scene>
+        <!--Web View Controller-->
+        <scene sceneID="P2Y-6w-wWw">
+            <objects>
+                <viewController storyboardIdentifier="WebViewController" id="k6s-F7-igT" customClass="WebViewController" customModule="TrendMedia" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="INS-vE-nN8">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GIq-Vy-ymY">
+                                <rect key="frame" x="0.0" y="47" width="390" height="763"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="fxe-Vh-GiI"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="GIq-Vy-ymY" firstAttribute="centerX" secondItem="INS-vE-nN8" secondAttribute="centerX" id="262-kC-1Gx"/>
+                            <constraint firstItem="fxe-Vh-GiI" firstAttribute="bottom" secondItem="GIq-Vy-ymY" secondAttribute="bottom" id="4bz-Fd-Ttr"/>
+                            <constraint firstItem="GIq-Vy-ymY" firstAttribute="leading" secondItem="fxe-Vh-GiI" secondAttribute="leading" id="Y1D-ce-wca"/>
+                            <constraint firstItem="GIq-Vy-ymY" firstAttribute="top" secondItem="fxe-Vh-GiI" secondAttribute="top" id="h2G-8u-vda"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wi4-VI-OBL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1017" y="681"/>
+        </scene>
         <!--Detail View Controller-->
         <scene sceneID="sog-EW-XFn">
             <objects>

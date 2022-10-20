@@ -20,6 +20,7 @@
 		59399F7A28FC79DC0049B3EC /* TableViewCellA.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59399F7828FC79DB0049B3EC /* TableViewCellA.xib */; };
 		59399F7C28FC7A1F0049B3EC /* TableViewCellA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59399F7B28FC7A1F0049B3EC /* TableViewCellA.swift */; };
 		59399F8028FC7E670049B3EC /* Struct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59399F7F28FC7E670049B3EC /* Struct.swift */; };
+		593BBCC6290188FC001C26CA /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593BBCC5290188FC001C26CA /* WebViewController.swift */; };
 		595783E028FD59F70025CD6D /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 595783DF28FD59F70025CD6D /* SearchViewController.swift */; };
 		596564A7290159EF0072E21C /* TableViewCellB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596564A5290159EF0072E21C /* TableViewCellB.swift */; };
 		596564A8290159EF0072E21C /* TableViewCellB.xib in Resources */ = {isa = PBXBuildFile; fileRef = 596564A6290159EF0072E21C /* TableViewCellB.xib */; };
@@ -62,6 +63,7 @@
 		59399F7828FC79DB0049B3EC /* TableViewCellA.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCellA.xib; sourceTree = "<group>"; };
 		59399F7B28FC7A1F0049B3EC /* TableViewCellA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellA.swift; sourceTree = "<group>"; };
 		59399F7F28FC7E670049B3EC /* Struct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Struct.swift; sourceTree = "<group>"; };
+		593BBCC5290188FC001C26CA /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		595783DF28FD59F70025CD6D /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		596564A5290159EF0072E21C /* TableViewCellB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellB.swift; sourceTree = "<group>"; };
 		596564A6290159EF0072E21C /* TableViewCellB.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCellB.xib; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 				59399F7B28FC7A1F0049B3EC /* TableViewCellA.swift */,
 				59399F7828FC79DB0049B3EC /* TableViewCellA.xib */,
 				59399F4A28FC77E80049B3EC /* Main.storyboard */,
+				593BBCC5290188FC001C26CA /* WebViewController.swift */,
 				59399F7F28FC7E670049B3EC /* Struct.swift */,
 				59399F5028FC77E80049B3EC /* Assets.xcassets */,
 				59399F5228FC77E80049B3EC /* LaunchScreen.storyboard */,
@@ -295,6 +298,7 @@
 				59399F8028FC7E670049B3EC /* Struct.swift in Sources */,
 				595783E028FD59F70025CD6D /* SearchViewController.swift in Sources */,
 				59399F4F28FC77E80049B3EC /* TrendMedia.xcdatamodeld in Sources */,
+				593BBCC6290188FC001C26CA /* WebViewController.swift in Sources */,
 				59399F7C28FC7A1F0049B3EC /* TableViewCellA.swift in Sources */,
 				59399F4928FC77E80049B3EC /* ViewController.swift in Sources */,
 				59399F4528FC77E80049B3EC /* AppDelegate.swift in Sources */,

@@ -94,6 +94,8 @@ extension ViewController: UITableViewDataSource {
         let vc = segue.destination as? DetailViewController
         vc?.movie = movies[selectedIndexPath.row]
     }
+    
+    
 }
 
 extension ViewController: UITableViewDelegate {

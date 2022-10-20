@@ -53,6 +53,17 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7nR-Ni-I2i">
+                        <rect key="frame" x="274" y="58" width="36" height="35"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="plain" image="link.circle.fill" catalog="system">
+                            <attributedString key="attributedTitle"/>
+                        </buttonConfiguration>
+                        <connections>
+                            <action selector="linkBtn:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="R55-1Y-ecH"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="N6U-1H-gIz" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="05g-h5-fRs"/>
@@ -81,8 +92,12 @@
                 <outlet property="lbl3" destination="6FN-2Y-DqO" id="ppb-jQ-NJa"/>
                 <outlet property="lbl4" destination="VWY-ZA-4aA" id="6vJ-h2-dpe"/>
                 <outlet property="lbl5" destination="kMw-2z-UU2" id="Ja2-aa-fjS"/>
+                <outlet property="link" destination="7nR-Ni-I2i" id="73f-Yz-RzV"/>
             </connections>
             <point key="canvasLocation" x="-67.692307692307693" y="-74.644549763033169"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="link.circle.fill" catalog="system" width="128" height="123"/>
+    </resources>
 </document>

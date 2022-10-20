@@ -7,8 +7,11 @@
 
 import UIKit
 
+
 class TableViewCellA: UITableViewCell {
 
+    
+    @IBOutlet weak var link: UIButton!
     
     @IBOutlet weak var lbl1: UILabel!
     
@@ -22,6 +25,8 @@ class TableViewCellA: UITableViewCell {
     
     @IBOutlet weak var lbl5: UILabel!
     
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -34,4 +39,8 @@ class TableViewCellA: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    
+    @IBAction func linkBtn(_ sender: Any) {
+        link.isSelected.toggle()
+    }
 }
