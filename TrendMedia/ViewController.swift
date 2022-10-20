@@ -7,6 +7,7 @@
 
 import UIKit
 
+
 class ViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
@@ -27,45 +28,38 @@ class ViewController: UIViewController {
     
 }
 
+
 extension ViewController: UITableViewDataSource {
     
    func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return movies.count
+        return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let keys = movies.keys.sorted()
-        let key = keys[section]
-        if let koreanTitle = movies[key] {
-            return koreanTitle.count
-        }else{
-            return 0
-        }
+        return movies.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCellA", for: indexPath)
         
-        let keys = movies.keys.sorted()
-        let key = keys[indexPath.section]
-        guard let koreanTitle = movies[key] else {fatalError()}
-        let movies = koreanTitle[indexPath.row]
+        let movie = movies[indexPath.row]
         
-        let imgMovie = cell.viewWithTag(3) as? UIImageView
-        imgMovie?.image = UIImage(named: movies.img)
+        let image = cell.viewWithTag(3) as? UIImageView
+        image?.image = UIImage(named: movie.img)
+        image?.layer.cornerRadius = 10
         
         let lblTag = cell.viewWithTag(1) as? UILabel
-        lblTag?.text = movies.textTag
+        lblTag?.text = movie.textTag
         
         let lblEng = cell.viewWithTag(2) as? UILabel
-        lblEng?.text = movies.englishTitle
+        lblEng?.text = movie.englishTitle
         
         let lblKo = cell.viewWithTag(4) as? UILabel
-        lblKo?.text = movies.koreanTitle
+        lblKo?.text = movie.koreanTitle
         
         let lblDate = cell.viewWithTag(5) as? UILabel
-        lblDate?.text = movies.date1
+        lblDate?.text = movie.date1
         
         return cell
     }
@@ -77,33 +71,62 @@ extension ViewController: UITableViewDataSource {
         return 80
         
     }
-   
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("cell tapped")
+        
+        /* present 방식
+//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//        let vc = storyboard.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
+//        present(vc, animated: true, completion: nil)
+         */
+        
+        let vc = DetailViewController()
+        navigationController?.pushViewController(vc, animated: true)
+       
+        // push
+        
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        guard let selectedIndexPath = tableView.indexPathForSelectedRow else {return}
+        
+        let vc = segue.destination as? DetailViewController
+        vc?.movie = movies[selectedIndexPath.row]
+    }
 }
 
 extension ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView?{
             let headerView = UIView()
-            let filmButton = UIButton(frame: CGRect(x: 40, y: 0, width: 60, height: 60))
-            
+        
+        headerView.backgroundColor = .white
+        headerView.layer.cornerRadius = 10
+        
+            let filmButton = UIButton(frame: CGRect(x: 30, y: 0, width: 60, height: 60))
         filmButton.setImage(UIImage(systemName: "film"), for: .normal)
-        filmButton.backgroundColor = .green
-        filmButton.setTitleColor(.green, for: .normal)
+        filmButton.setPreferredSymbolConfiguration(.init(pointSize: 30, weight: .regular, scale: .default), forImageIn: .normal)
+        filmButton.tintColor = .systemGreen
 
-        let tvButton = UIButton(frame: CGRect(x: 170, y: 0, width: 60, height: 60))
+        let tvButton = UIButton(frame: CGRect(x: 160, y: 0, width: 60, height: 60))
         headerView.addSubview(tvButton)
     tvButton.setImage(UIImage(systemName: "display"), for: .normal)
-    tvButton.backgroundColor = .green
+    tvButton.setPreferredSymbolConfiguration(.init(pointSize: 30, weight: .regular, scale: .default), forImageIn: .normal)
+        tvButton.tintColor = .systemYellow
         
-        let bookButton = UIButton(frame: CGRect(x: 300, y: 0, width: 60, height: 60))
-        headerView.addSubview(tvButton)
+        
+        let bookButton = UIButton(frame: CGRect(x: 290, y: 0, width: 60, height: 60))
+        bookButton.setPreferredSymbolConfiguration(.init(pointSize: 30, weight: .regular, scale: .default), forImageIn: .normal)
         bookButton.setImage(UIImage(systemName: "book.closed"), for: .normal)
-        bookButton.backgroundColor = .green
+        bookButton.tintColor = .systemBlue
         
-        
+       
         headerView.addSubview(filmButton)
         headerView.addSubview(tvButton)
         headerView.addSubview(bookButton)
             return headerView
         
     }
+    
 }
+
