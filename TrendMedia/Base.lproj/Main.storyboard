@@ -56,7 +56,7 @@
                         <barButtonItem key="rightBarButtonItem" image="magnifyingglass" catalog="system" id="PQl-Rm-BtD">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
-                                <segue destination="N9N-1s-I4A" kind="presentation" modalPresentationStyle="fullScreen" id="ooa-Vr-8yj"/>
+                                <segue destination="CTW-VK-yj8" kind="presentation" modalPresentationStyle="fullScreen" id="Rr1-eb-kxt"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -67,6 +67,51 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1016.9230769230769" y="-28.436018957345969"/>
+        </scene>
+        <!--Search View Controller-->
+        <scene sceneID="9JD-Mn-Xwl">
+            <objects>
+                <viewController id="CTW-VK-yj8" customClass="SearchViewController" customModule="TrendMedia" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nqu-7O-JdW">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="IDd-6k-rVt">
+                                <rect key="frame" x="0.0" y="68" width="390" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="mj4-zl-1as"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="CTW-VK-yj8" id="r9J-IF-t8N"/>
+                                </connections>
+                            </searchBar>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ICd-uo-MaX">
+                                <rect key="frame" x="0.0" y="33" width="70" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="chevron.backward" catalog="system" title="검색">
+                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="actBack:" destination="CTW-VK-yj8" eventType="touchUpInside" id="MWI-w5-EbM"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="T9o-dm-VNR"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ICd-uo-MaX" firstAttribute="leading" secondItem="IDd-6k-rVt" secondAttribute="leading" id="EM2-xr-cYQ"/>
+                            <constraint firstItem="ICd-uo-MaX" firstAttribute="leading" secondItem="T9o-dm-VNR" secondAttribute="leading" id="NZW-Ob-WAJ"/>
+                            <constraint firstItem="T9o-dm-VNR" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ICd-uo-MaX" secondAttribute="trailing" symbolic="YES" id="VKJ-Sv-rje"/>
+                            <constraint firstItem="ICd-uo-MaX" firstAttribute="top" secondItem="nqu-7O-JdW" secondAttribute="topMargin" constant="-14" id="bFC-Bz-Vx8"/>
+                            <constraint firstItem="IDd-6k-rVt" firstAttribute="centerX" secondItem="nqu-7O-JdW" secondAttribute="centerX" id="n3Q-YI-m0u"/>
+                            <constraint firstItem="IDd-6k-rVt" firstAttribute="top" secondItem="ICd-uo-MaX" secondAttribute="bottom" id="xfU-Xn-Eop"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BWU-It-W0a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1932" y="-284"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="sog-EW-XFn">
@@ -115,52 +160,6 @@
             </objects>
             <point key="canvasLocation" x="1997" y="419"/>
         </scene>
-        <!--Search View Controller-->
-        <scene sceneID="Al8-lC-d4c">
-            <objects>
-                <viewController id="N9N-1s-I4A" customClass="SearchViewController" customModule="TrendMedia" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="kns-Sc-hDL">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="jPV-0t-WVc">
-                                <rect key="frame" x="0.0" y="47" width="390" height="797"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <searchBar key="tableHeaderView" contentMode="redraw" id="hHX-xL-FBK">
-                                    <rect key="frame" x="0.0" y="0.0" width="390" height="56"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                    <textInputTraits key="textInputTraits"/>
-                                    <connections>
-                                        <outlet property="delegate" destination="N9N-1s-I4A" id="q8z-na-1jd"/>
-                                    </connections>
-                                </searchBar>
-                            </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DVS-6u-EDn">
-                                <rect key="frame" x="0.0" y="26" width="75" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
-                                <connections>
-                                    <action selector="actBack:" destination="N9N-1s-I4A" eventType="touchUpInside" id="J1p-V8-fEW"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="n3x-1G-wjd"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="n3x-1G-wjd" firstAttribute="trailing" secondItem="jPV-0t-WVc" secondAttribute="trailing" id="5vp-An-DhP"/>
-                            <constraint firstItem="jPV-0t-WVc" firstAttribute="leading" secondItem="n3x-1G-wjd" secondAttribute="leading" id="E2Y-oR-XGc"/>
-                            <constraint firstItem="jPV-0t-WVc" firstAttribute="top" secondItem="n3x-1G-wjd" secondAttribute="top" id="jpS-Wi-YYb"/>
-                            <constraint firstAttribute="bottom" secondItem="jPV-0t-WVc" secondAttribute="bottom" id="nux-QH-Z6F"/>
-                        </constraints>
-                    </view>
-                    <toolbarItems/>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hen-m2-85O" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2013.8461538461538" y="-288.62559241706163"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="7M7-TM-OX5">
             <objects>
@@ -181,6 +180,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="chevron.backward" catalog="system" width="97" height="128"/>
         <image name="magnifyingglass" catalog="system" width="128" height="117"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
