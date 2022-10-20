@@ -52,10 +52,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="TREND MEDIA" id="CaI-tO-fyj">
+                        <barButtonItem key="backBarButtonItem" title="검색" id="gy6-i0-ZV3"/>
                         <barButtonItem key="rightBarButtonItem" image="magnifyingglass" catalog="system" id="PQl-Rm-BtD">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
-                                <segue destination="N9N-1s-I4A" kind="presentation" modalPresentationStyle="fullScreen" id="IMm-G9-h3M"/>
+                                <segue destination="N9N-1s-I4A" kind="presentation" modalPresentationStyle="fullScreen" id="ooa-Vr-8yj"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -123,39 +124,37 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="jPV-0t-WVc">
-                                <rect key="frame" x="0.0" y="91" width="390" height="753"/>
+                                <rect key="frame" x="0.0" y="47" width="390" height="797"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="753" id="FDA-TV-1uP"/>
-                                </constraints>
+                                <searchBar key="tableHeaderView" contentMode="redraw" id="hHX-xL-FBK">
+                                    <rect key="frame" x="0.0" y="0.0" width="390" height="56"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                    <connections>
+                                        <outlet property="delegate" destination="N9N-1s-I4A" id="q8z-na-1jd"/>
+                                    </connections>
+                                </searchBar>
                             </tableView>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cT6-Vq-Pbs">
-                                <rect key="frame" x="0.0" y="91" width="390" height="44"/>
-                            </navigationBar>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="hHX-xL-FBK">
-                                <rect key="frame" x="0.0" y="35" width="390" height="56"/>
-                                <textInputTraits key="textInputTraits"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DVS-6u-EDn">
+                                <rect key="frame" x="0.0" y="26" width="75" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
                                 <connections>
-                                    <outlet property="delegate" destination="N9N-1s-I4A" id="q8z-na-1jd"/>
+                                    <action selector="actBack:" destination="N9N-1s-I4A" eventType="touchUpInside" id="J1p-V8-fEW"/>
                                 </connections>
-                            </searchBar>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="n3x-1G-wjd"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="n3x-1G-wjd" firstAttribute="trailing" secondItem="jPV-0t-WVc" secondAttribute="trailing" id="5vp-An-DhP"/>
-                            <constraint firstItem="jPV-0t-WVc" firstAttribute="leading" secondItem="cT6-Vq-Pbs" secondAttribute="leading" id="6CQ-Xm-KFS"/>
-                            <constraint firstItem="jPV-0t-WVc" firstAttribute="trailing" secondItem="cT6-Vq-Pbs" secondAttribute="trailing" id="9Rc-Ff-OAL"/>
                             <constraint firstItem="jPV-0t-WVc" firstAttribute="leading" secondItem="n3x-1G-wjd" secondAttribute="leading" id="E2Y-oR-XGc"/>
-                            <constraint firstItem="cT6-Vq-Pbs" firstAttribute="leading" secondItem="hHX-xL-FBK" secondAttribute="leading" id="Xwo-ok-qW4"/>
-                            <constraint firstItem="n3x-1G-wjd" firstAttribute="bottom" secondItem="jPV-0t-WVc" secondAttribute="bottom" constant="-83" id="Y8z-4a-Goz"/>
-                            <constraint firstItem="cT6-Vq-Pbs" firstAttribute="trailing" secondItem="hHX-xL-FBK" secondAttribute="trailing" id="kkM-Sf-ai5"/>
-                            <constraint firstItem="cT6-Vq-Pbs" firstAttribute="top" secondItem="hHX-xL-FBK" secondAttribute="bottom" id="sVu-au-aEX"/>
-                            <constraint firstItem="cT6-Vq-Pbs" firstAttribute="top" secondItem="jPV-0t-WVc" secondAttribute="top" id="uhK-cU-23z"/>
+                            <constraint firstItem="jPV-0t-WVc" firstAttribute="top" secondItem="n3x-1G-wjd" secondAttribute="top" id="jpS-Wi-YYb"/>
+                            <constraint firstAttribute="bottom" secondItem="jPV-0t-WVc" secondAttribute="bottom" id="nux-QH-Z6F"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="VVc-M5-5ZR"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hen-m2-85O" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
