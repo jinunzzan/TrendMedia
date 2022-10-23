@@ -6,13 +6,16 @@
 //
 
 import UIKit
+import WebKit
 
 class WebViewController: UIViewController {
 
+    var url: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        print("URL: ", url)
     }
     
 

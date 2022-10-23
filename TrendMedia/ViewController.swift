@@ -14,18 +14,12 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        // Do any additional setup after loading the view.
-        
         let nibName = UINib(nibName: "TableViewCellA", bundle: nil)
         tableView.register(nibName, forCellReuseIdentifier: "TableViewCellA")
         
         tableView.dataSource = self
         tableView.delegate = self
     }
-    
-    
 }
 
 
@@ -41,7 +35,7 @@ extension ViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCellA", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCellA", for: indexPath) as! TableViewCellA
         
         let movie = movies[indexPath.row]
         
@@ -61,7 +55,28 @@ extension ViewController: UITableViewDataSource {
         let lblDate = cell.viewWithTag(5) as? UILabel
         lblDate?.text = movie.date1
         
+        cell.link.addTarget(self, action: #selector(showWeb), for: .touchUpInside)
+        cell.link.tag = indexPath.row
+        cell.complitiolnHandler = {
+            let sb = UIStoryboard(name: "Main", bundle: nil)
+            let vc = sb.instantiateViewController(withIdentifier: "WebViewController") as! WebViewController
+            
+            vc.url = movie.link
+            
+            self.navigationController?.pushViewController(vc, animated: true)
+            
+        }
         return cell
+    }
+    
+    @objc func showWeb(_ sender: UIButton){
+        print("indexPath", sender.tag)
+        
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: "WebViewController") as! WebViewController
+        vc.url = movies[sender.tag].link
+        
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -69,21 +84,17 @@ extension ViewController: UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 80
-        
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("cell tapped")
-        
         /* present 방식
 //        let storyboard = UIStoryboard(name: "Main", bundle: nil)
 //        let vc = storyboard.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
 //        present(vc, animated: true, completion: nil)
          */
-        
         let vc = DetailViewController()
         navigationController?.pushViewController(vc, animated: true)
-       
         // push
         
     }

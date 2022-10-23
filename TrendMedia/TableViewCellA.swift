@@ -25,7 +25,7 @@ class TableViewCellA: UITableViewCell {
     
     @IBOutlet weak var lbl5: UILabel!
     
-    
+    var complitiolnHandler:(() -> Void)?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -41,6 +41,6 @@ class TableViewCellA: UITableViewCell {
     
     
     @IBAction func linkBtn(_ sender: Any) {
-        link.isSelected.toggle()
+        complitiolnHandler?()
     }
 }
