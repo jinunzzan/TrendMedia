@@ -14,7 +14,7 @@ struct Lists: Encodable, Decodable {
     var koreanTitle: String
     var date1: String
     var link: String?
-    var actors: [String]?
+    var actors: [String]
    
 }
 
@@ -24,3 +24,14 @@ let movies:[Lists] = [
         Lists(textTag: "#액션", englishTitle: "Venom - 1", img: "광해", koreanTitle: "베놈", date1: "2022/09/10", link: "", actors: ["김", "이", "박"])
 ]
 
+
+struct BookList: Encodable, Decodable {
+    var bookName: String
+    var bookImg: String
+}
+
+let books:[BookList] = [
+    BookList(bookName: "책1", bookImg: ""),
+    BookList(bookName: "책2", bookImg: ""),
+    BookList(bookName: "책3", bookImg: "")
+]

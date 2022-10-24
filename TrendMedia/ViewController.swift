@@ -60,11 +60,11 @@ extension ViewController: UITableViewDataSource {
 //        cell.complitiolnHandler = {
 //            let sb = UIStoryboard(name: "Main", bundle: nil)
 //            let vc = sb.instantiateViewController(withIdentifier: "WebViewController") as! WebViewController
-//            
+//
 //            vc.url = movie.link
-//            
+//
 //            self.navigationController?.pushViewController(vc, animated: true)
-//            
+//
 //        }
         return cell
     }
@@ -133,12 +133,21 @@ extension ViewController: UITableViewDelegate {
         bookButton.setImage(UIImage(systemName: "book.closed"), for: .normal)
         bookButton.tintColor = .systemBlue
         
+        bookButton.addTarget(self, action: #selector(showBooks), for: .touchUpInside)
+       
        
         headerView.addSubview(filmButton)
         headerView.addSubview(tvButton)
         headerView.addSubview(bookButton)
             return headerView
         
+    }
+    @objc func showBooks(_ sender: UIButton){
+        
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: "BooksViewController") as! BooksViewController
+        
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
 }

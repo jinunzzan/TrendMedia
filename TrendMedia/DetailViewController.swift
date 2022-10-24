@@ -45,11 +45,20 @@ class DetailViewController: UIViewController {
 
 extension DetailViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
+        guard let actor = movie?.actors.count else { fatalError() }
+        
+        return actor
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCellB", for: indexPath) as! TableViewCellB
+        
+        
+        let actorName = cell.viewWithTag(2) as? UILabel
+        actorName?.text = "\(movie?.actors)"
+     
+        return cell
     }
     
     
