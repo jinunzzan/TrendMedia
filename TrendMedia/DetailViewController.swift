@@ -19,7 +19,11 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
 
         self.view.backgroundColor = .white
+        let nibName = UINib(nibName: "TableViewCellB", bundle: nil)
+        tableView.register(nibName, forCellReuseIdentifier: "TableViewCellB")
         
+        tableView.dataSource = self
+        tableView.delegate = self
         
 //        if let movie = self.movie {
 //
@@ -39,4 +43,14 @@ class DetailViewController: UIViewController {
 
 }
 
-
+extension DetailViewController: UITableViewDelegate, UITableViewDataSource{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        <#code#>
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        <#code#>
+    }
+    
+    
+}

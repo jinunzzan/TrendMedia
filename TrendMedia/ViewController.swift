@@ -57,15 +57,15 @@ extension ViewController: UITableViewDataSource {
         
         cell.link.addTarget(self, action: #selector(showWeb), for: .touchUpInside)
         cell.link.tag = indexPath.row
-        cell.complitiolnHandler = {
-            let sb = UIStoryboard(name: "Main", bundle: nil)
-            let vc = sb.instantiateViewController(withIdentifier: "WebViewController") as! WebViewController
-            
-            vc.url = movie.link
-            
-            self.navigationController?.pushViewController(vc, animated: true)
-            
-        }
+//        cell.complitiolnHandler = {
+//            let sb = UIStoryboard(name: "Main", bundle: nil)
+//            let vc = sb.instantiateViewController(withIdentifier: "WebViewController") as! WebViewController
+//            
+//            vc.url = movie.link
+//            
+//            self.navigationController?.pushViewController(vc, animated: true)
+//            
+//        }
         return cell
     }
     
