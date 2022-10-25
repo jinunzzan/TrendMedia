@@ -7,29 +7,47 @@
 
 import UIKit
 
+
 class BooksViewController: UIViewController, UICollectionViewDelegate,
-                           UICollectionViewDataSource{
+                           UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     
+    var book:BookList?
     
     @IBOutlet weak var collectionView: UICollectionView!
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
+        
+        return books.count
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? UICollectionViewCell else {
-            return UICollectionViewCell()
-        }
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
+        
+        let book1 = books[indexPath.row]
+        
+        let lbl = collectionView.viewWithTag(1) as? UILabel
+        lbl?.text = book1.bookName
+        
+        let img = collectionView.viewWithTag(2) as? UIImageView
+        img?.image = UIImage(named: book1.bookImg)
+        img?.layer.cornerRadius = 10
+        
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 180, height: 180)
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 20
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         collectionView.dataSource = self
         collectionView.delegate = self
-
+    
         // Do any additional setup after loading the view.
     }
     

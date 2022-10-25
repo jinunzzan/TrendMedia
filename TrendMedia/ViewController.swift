@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 
 class ViewController: UIViewController {
@@ -40,6 +41,7 @@ extension ViewController: UITableViewDataSource {
         let movie = movies[indexPath.row]
         
         let image = cell.viewWithTag(3) as? UIImageView
+        
         image?.image = UIImage(named: movie.img)
         image?.layer.cornerRadius = 10
         
