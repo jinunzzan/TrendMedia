@@ -93,8 +93,12 @@ extension ViewController: UITableViewDataSource {
 //        let vc = storyboard.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
 //        present(vc, animated: true, completion: nil)
          */
-        let vc = DetailViewController()
-        navigationController?.pushViewController(vc, animated: true)
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
+        
+        vc.movie = movies[indexPath.row]
+        
+        self.navigationController?.pushViewController(vc, animated: true)
         // push
         
     }

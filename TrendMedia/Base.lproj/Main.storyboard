@@ -72,7 +72,7 @@
         <!--Books View Controller-->
         <scene sceneID="WCN-Pb-BUw">
             <objects>
-                <viewController id="Q9F-g3-zeW" customClass="BooksViewController" customModule="TrendMedia" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BooksViewController" id="Q9F-g3-zeW" customClass="BooksViewController" customModule="TrendMedia" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tQw-ik-3RE">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -209,6 +209,9 @@
                             <constraint firstItem="GIq-Vy-ymY" firstAttribute="top" secondItem="fxe-Vh-GiI" secondAttribute="top" id="h2G-8u-vda"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="webView" destination="GIq-Vy-ymY" id="Eug-ne-rSd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wi4-VI-OBL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -247,7 +250,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="YA0-bu-7ce"/>
                     <connections>
-                        <outlet property="tableView" destination="Qpe-hh-R4J" id="gPW-iz-Ypx"/>
+                        <outlet property="tableView" destination="Qpe-hh-R4J" id="V4v-Lo-WfV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IAS-se-3nS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

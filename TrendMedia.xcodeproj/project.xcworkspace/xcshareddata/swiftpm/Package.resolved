@@ -5,17 +5,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/onevcat/Kingfisher.git",
       "state" : {
-        "revision" : "017f94ccfdacabb1ae7f45b75b4217b24c06e6ac",
-        "version" : "7.4.0"
-      }
-    },
-    {
-      "identity" : "snapkit",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/SnapKit/SnapKit.git",
-      "state" : {
-        "revision" : "f222cbdf325885926566172f6f5f06af95473158",
-        "version" : "5.6.0"
+        "branch" : "master",
+        "revision" : "229f637beeb7b4ef81006e951a17a7cf2c52ccf0"
       }
     }
   ],
